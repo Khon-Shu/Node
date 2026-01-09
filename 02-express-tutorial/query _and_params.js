@@ -2,7 +2,7 @@ const express = require('express')
 const app = express()
 const {products} =require('./data')
 
-
+//query is request for informations
 app.get('/' , (req, res) =>{
     res.send("<h1>this is home page</h1>")
 })

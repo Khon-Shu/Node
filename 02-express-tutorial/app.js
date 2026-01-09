@@ -4,11 +4,15 @@
 const express = require('express')
 const app = express()
 const logger = require('./logger')
-app.use('/about' ,logger)
+const authorize = require('./authorize')
+const morgan = require('morgan')
+app.use([authorize,logger])
 //if it is used here we can literally use logger in /about/personal/api everywhere in about
+//the app.use only expects the middle ware function must have req, res and next()
 
 app.get('/' , (req, res) =>{
     res.send("This is home page")
+  
 })
 
 app.get('/about',  (req, res) =>{

@@ -1,3 +1,5 @@
+
+//its a middleware
 const express = require('express')
 const app = express()
 
@@ -12,6 +14,8 @@ app.get('/about' , (req,res)=>{
 // app.get('/' , (req,res) =>{
 //     res.sendFile(path.resolve(__dirname, "./navbar-app/index.html"))
 // })
+
+
 
 app.all('*', (req, res) =>{
         res.status(404).send("Error finding this page")
